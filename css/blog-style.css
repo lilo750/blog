@@ -1,0 +1,437 @@
+/*
+    1-header
+        1.1- nav bar
+        1.2- breed crumb
+        1.3- main
+            1.3.1- article picture and description and tags and media section [pic (left) + description (right)]
+            1.3.2- aside [search input + category + pouplur posts + tags]
+    2- comments section
+        2.1- 5 cards for comments
+        2.2 - leave messege form 
+    3-footer
+ */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*
+ 1-header section
+    1.1-navbar
+ */
+header nav {
+    display: flex;
+    width: 100%;
+    padding: 0 60px;
+}
+header nav .logo img {
+    display: block;
+    max-height: 60px;
+}
+header nav ul {
+    margin-left: auto;
+}
+header ul li {
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+}
+.link {
+    color: #10161A;
+    line-height: 60px;
+    transition: color 0.5s;
+    display: block;
+    padding: 0 12px;
+    position: relative;
+ }
+nav ul .link:hover {
+    color: var(--mainColor);
+    opacity: 1;
+}
+.link::after {
+    content: "";
+    position: absolute;
+    left: 13px;
+    bottom: 17px;
+    width: 0;
+    height: 2px;
+    background-color: var(--mainColor);
+    transition: width 0.3s;
+}
+.link:hover::after {
+    width: 66%;
+}
+/*
+ 1-section header
+    1.2- breed crumb
+ */
+header .breed-crumb {
+    height: 180px;
+    padding: 75px 65px;
+    background-color: #f4f4f4;
+    display: flex;
+    margin-bottom: 125px;
+}
+.breed-crumb ul {
+    margin-left: auto;
+}
+.breed-crumb ul li {
+    text-transform: capitalize;
+    font-size: 17px;
+    padding: 15px;
+}
+.home-breed,
+.blog-breed {
+    position: relative;
+}
+.breed-crumb ul .home-breed::after, 
+.breed-crumb ul .blog-breed::after {
+    content: "/\00a0";
+    position: absolute;
+    right: -10px;
+    color: #868F9B;
+}
+.breed-crumb ul li:last-child {
+    color: #868F9B;
+}
+main {
+    display: flex;
+    padding: 0 65px;
+}
+article {
+    width: 76%;
+    padding-right: 33px;
+}
+aside {
+    width: 25%;
+}
+/* article section */
+figure.article-img figcaption  ul {
+    margin-left: -10px;
+    margin: 20px 0;
+}
+figure.article-img figcaption ul li {
+    padding-left: 10px;
+}
+figure.article-img figcaption ul li i {
+    color: #6196fe;
+    font-size: 14px;
+    padding-right: 5px;
+}
+figure .article-title {
+    padding-bottom: 20px;
+    font-size: 22px;
+}
+figure .article-description {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    color: #868F9B;
+}
+figure .blog-tags {
+    /* border: 1px solid red; */
+    margin: 45px 0 20px 0;
+}
+figure .blog-tags h5 {
+    display: inline-block;
+    font-size: 17px;
+}
+/* public for all tags */
+.tag {
+    display: inline-block;
+    padding: 9px 20px;
+    font-size: 15px;
+    margin: 4px 0px;
+    background: #F4F4F4;
+}
+figure .blog-tags .tag span.tag-name {
+    color: #10161A;
+}
+.blog-tags .tag .fa-tag {
+    display: inline-block;
+    /* color: #6196fe; */
+    padding-right: 3px;
+    font-size: 15px;
+}
+/* aside  */
+
+aside .search-container input {
+    height: 40px;
+    width: 100%;
+    border: none;
+    background: #F4F4F4;
+    border-bottom: 2px solid #EEE;
+    color: #354052;
+    padding: 0px 10px;
+    opacity: 0.5;
+    font-size: 16px;
+    transition: 0.3s opacity;
+}
+aside .search-container input {
+    opacity: 1;
+}
+aside .search-container button {
+    display: block;
+    position: relative;
+    right: 15px;
+    top: -30px;
+    border: none;
+    margin-left: auto;
+    cursor: pointer;
+}
+aside .search-container button .fa-search {
+    color: #6196fe;
+    font-size: 16px;
+}
+.header {
+    position: relative;
+    margin: 20px 0;
+}
+.header .h3 {
+    font-size: 25px;
+    font-weight: 800;
+}
+.header span {
+    display: block;
+    margin-top: 15px;
+    width: 38px;
+    height: 4px;
+    background: #6196fe;
+}
+.cetegory-content a {
+    display: block;
+    font-size: 14px;
+    color: #354052;
+    border-bottom: 2px solid #EEE;
+    padding: 7px;
+}
+.cetegory-content a:nth-child(1) {
+    border-top: 2px solid #EEE;
+}
+.cetegory-content a:hover {
+    text-decoration: none;
+    outline: none;
+    opacity: 0.8;
+    color: #6195FF;
+}
+.cetegory-content a span {
+    color: #6196fe;
+    padding-left: 20px;
+    float: right;
+}
+.post {
+    padding-bottom: 10px;
+}
+.post .post-content a {
+    display: flex;
+}
+.post .post-content a img {
+    display: block;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 40%;
+}
+.post .post-content a span {
+    display: block;
+    color: #354052;
+    transition: 0.3s color;
+}
+.post-content a:hover span {
+    color: #6195FF;
+}
+.post-content ul {
+    position: relative;
+    left: 103px;
+    top: -15px;
+    width: fit-content;
+    color: #6195FF;
+}
+.tags .tag {
+    color: #354052;
+}
+section.media {
+    padding: 20px;
+    border: 1px solid #EEE;
+    display: flex;
+}
+.media-left {
+    padding-right: 20px;
+}
+.social-img img {
+    height: 145px;
+}
+.media-right {
+    width: 80%;
+}
+.media-right .media-right-heading {
+    display: flex;
+    padding-bottom: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EEE;
+}
+.media-right .media-right-heading h3 {
+    font-size: 20px;
+}
+.media-right .media-right-heading .icons {
+    margin-left: auto;
+} 
+.media-right-heading a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    background-color: #6195FF;
+    border: none;
+    border-radius: 5px;
+    margin-left: 2px;
+}
+.media-right-heading .icons i {
+    color: white;
+}
+.media-right p {
+    color: #868F9B;
+    line-height: 1.6;
+    font-size: 17px;
+    padding-bottom: 40px;
+}
+/* comments section */
+section.comments {
+    width: 64%;
+    margin-left: 59px;
+}
+section.comments .header {
+    padding-top: 15px;
+}
+section.comments .header h3 {
+    font-size: 23px;
+}
+section.comments .comments-container {
+    border: 1px solid #EEE;
+}
+.comments-container .comment {
+    display: flex;
+    padding: 20px;
+}
+.comment .comment-left {
+    width: 14%;
+}
+.comment .comment-right {
+    width: 88%;
+    padding-left: 15px;
+}
+.comment-right .comment-right-heading {
+    display: flex;
+}
+.comment-right-heading h3 {
+    position: relative;
+}
+.comment-right-heading h3::after {
+    content: "2 MIN AGO";
+    position: absolute;
+    color: #868F9B;
+    right: -125px;
+    top: 3px;
+    width: 100px;
+    font-size: 12.5px;
+    font-weight: normal;
+
+}
+.comment-right-heading a {
+    margin-left: auto;
+}
+.comment-right-heading a i {
+    /* padding-left: 2px; */
+    font-size: 13px;
+}
+.comment-right p {
+    color: #868F9B;
+    line-height: 1.6;
+    padding-top: 10px;
+}
+.comment:nth-child(2) {
+    border-top: 1px solid #EEE;
+}
+.nested-comments-container {
+    /* padding: 0 10px; */
+    width: 95%;
+    margin: auto;
+    border: 1px solid #eee;
+}
+.nested-comments-container .comment:nth-child(1) {
+    border: 1px solid #6195FF;
+    background-color: #F4F4F4;
+}
+.last-comment {
+    margin-top: 20px;
+    border-top: 1px solid #EEE;
+}
+.last-comment .comment-right {
+    width: 100%;
+}
+section.comments form {
+    margin-bottom: 100px;
+}
+input,
+textarea {
+    display: inline-block;
+}
+.leave-messege form .name,
+.leave-messege form .email,
+form textarea {
+    border: none;
+    background: #F4F4F4;
+    border-bottom: 2px solid #EEE;
+    color: #354052;
+    padding: 0px 10px;
+    opacity: 0.5;
+    font-size: 16px;
+    transition: 0.3s opacity;
+}
+.leave-messege form .name:focus,
+.leave-messege form .email:focus,
+form textarea {
+    opacity: 1;
+}
+.leave-messege form .name,
+.leave-messege form .email {
+    width: 49%;
+    height: 40px;
+}
+.leave-messege form .name {
+    margin-left: -1px;
+}
+.leave-messege form .email {
+    margin-left: 10px;
+}
+.leave-messege form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    margin: 15px 0;
+    min-height: 80px;
+    resize: vertical;
+    opacity: 0.5;
+    transition: 0.3s opacity;
+}
+.leave-messege form textarea:focus {
+    opacity: 1;
+}
+.leave-messege button {
+    background-color: #6195FF;
+    padding: 15px 40px;
+    border-radius: 3px;
+    border: none;
+    margin: 10px 0 40px 0;
+}
+input[type="submit"] {
+ background-color: transparent;
+ color: white;   
+ border: none;
+ font-size: 17px;
+}
+
+
+
